@@ -2146,3 +2146,98 @@ Onder elke prompt staat kort wat er gebeurde en welke bestanden er gemaakt of aa
 - In `3. Socials/` hernoemd naar wat de screenshots tonen: `Buzz vierkant` → `Buzz posts`, `Buzz staand` → `Buzz ads`, `Buzz story` → `Buzz stories`.
 - Niet opgenomen: de 60 social assets als losse PNG's. Die staan alleen in Figma Buzz (link in `8. Links.md`). Optioneel: in Buzz exporteren (**Export**) en in `7. Oplevering/3. Socials/` zetten.
 - `README.md` bijgewerkt: oplevering ✅. Daarna `README.md` en `LOGBOEK.md` naar `7. Oplevering/` gekopieerd.
+
+### Prompt 148 · 13:24
+
+> kan je alles nog eens dubbel checken
+
+**Resultaat**
+- **Live gecontroleerd in de browser:**
+  - Landingspagina https://manoecallens.github.io/cloudberry/: laadt, 6 secties, 14 beelden (geen enkel kapot), Space Grotesk geladen, MailerLite-formulier aanwezig (voornaam en e-mail verplicht, opt-in niet vooraf aangevinkt).
+  - MailerLite-formulierpreview: laadt ("Even pauze?", privacyzin, opt-in, knop "Ik doe mee").
+  - Figma Buzz-link: opent het bestand "EINDWERK – Figma Buzz" (getest in een browser die al bij Figma ingelogd kan zijn; of het voor iedereen open staat, moet in een privévenster getest worden).
+  - GitHub-repository: 5 commits, maar `LOGBOEK.md` op GitHub is nog een oudere versie.
+- **Bestanden:** video 13,4 s, 1080 × 1920 ✅ · 25 AI-beelden en 25 versies zonder muur ✅ · spreadsheet: "Citroengras" verbeterd ✅ · `7. Oplevering/` is gelijk aan de originelen (verslag, README, logboek, landingspagina) ✅.
+- **`README.md` bijgewerkt:** verouderde statusrijen aangepast (concept + copy, Photoshop-action, AI-beelden, AI-video, posts in Figma, verslag 22 pagina's, formaten van de socials).
+- **Aandachtspunten voor de gebruiker:**
+  - De opdracht noemt Adobe Firefly voor beeld; de sfeerbeelden zijn met Figma Weave gemaakt (Firefly enkel voor de video). Dit staat transparant in het verslag.
+  - De video heeft geen muziek en geen eindbeeld met logo en slogan (niet verplicht).
+  - Het logo is nog het tijdelijke woordmerk.
+  - Het opt-in-vakje is niet verplicht in het formulier. Kan in MailerLite op "required" gezet worden.
+
+### Prompt 149 · 13:25
+
+> geef in de folder assets - 7. Oplevering - 3. Socials de documenten de juiste naam en nummering en in de map 1. Buzz geef de png's een betere kortere naam.
+
+(De gebruiker had zelf de 60 exports uit Figma Buzz in `7. Oplevering/3. Socials/1. Buzz/` gezet.)
+
+**Resultaat**
+- Bestanden in `3. Socials/` hernummerd na de map `1. Buzz`: `2. Sociale media.xlsx`, `3. Buzz posts`, `4. Buzz ads`, `5. Buzz stories`, `6. Buzz bulk`, `7. Buzz template`.
+- De 60 exports kregen eerst de naam "nummer + formaat + titelwoord" (zie prompt 150 voor de definitieve namen).
+- Gecontroleerd: post 1080 × 1080, story 1080 × 1920, ad 1440 × 1800. Op de exports staat "Citroengras" juist.
+
+### Prompt 150 · 13:27
+
+> nummer - post/ad/story - kleur voor de benaming voor de buzz
+
+**Resultaat**
+- De 60 exports in `7. Oplevering/3. Socials/1. Buzz/` heten nu "nummer + formaat + kleur", in de volgorde van de spreadsheet:
+  - `1.–20.` posts, `21.–40.` stories, `41.–60.` ads
+  - kleur per rij: groen › geel › oranje › rood › kleuren (alle 4), 4 keer herhaald (enkel, bewerkt, hand, gezin)
+  - bv. `1. Post groen.png`, `5. Post kleuren.png`, `21. Story groen.png`, `60. Ad kleuren.png`
+- `7. Oplevering/8. Links.md` aangevuld met de map `1. Buzz/`.
+- `README.md` en `LOGBOEK.md` opnieuw naar `7. Oplevering/` gekopieerd.
+
+### Prompt 151 · 15:57
+
+> Nee bij deze beelden heb ik de batch van photoshop niet gebruikt
+
+(Antwoord op de vraag of de 5 gezinsbeelden in `4. AI-beelden/2. Zonder achtergrond/` met de batch gemaakt zijn.)
+
+**Resultaat**
+- Het verslag klopt: de batch liep over 20 beelden. Op p. 7 een zin toegevoegd dat de 5 gezinsbeelden in dezelfde map niet met de batch gemaakt zijn. Het verslag is opnieuw opgeslagen in `6. Outputs/5. Verslag/` en `7. Oplevering/1. Verslag/`.
+- `README.md` (map `2. Zonder achtergrond/`: 25 beelden, waarvan 20 via action + batch) en `7. Oplevering/8. Links.md` aangepast.
+- `README.md` en `LOGBOEK.md` opnieuw naar `7. Oplevering/` gekopieerd.
+
+### Prompt 152 · 16:11
+
+> Dit is alles dat gedaan moest zijn, kan je alles nog voor een laatste keer checken
+
+(Met de checklist van de opdracht per onderdeel, recentere versie: Figma Weave voor beeld, Google Flow voor video.)
+
+**Resultaat**
+- Checklist letterlijk bewaard als `1. Briefing/8. Opdracht checklist.md`, met per punt een vinkje en onderaan een controletabel: waar elk punt in de projectmap staat.
+- **Alles uit de checklist is aanwezig.** Enige afwijking: de video is gemaakt met Adobe Firefly Video en niet met Google Flow (de vorige versie van de opdracht vroeg Firefly). Het verslag vermeldt dat correct.
+- Links in het verslag gecontroleerd: 7 klikbare links (Figma Buzz, MailerLite-preview, GitHub Pages, GitHub-repository). Landingspagina, MailerLite-preview en Figma eerder vandaag live getest.
+- `Design guidelines.md` bijgewerkt: verouderde ⏳-punten afgewerkt (concept, slogan, fontbestand, CHATHÉ-label), "Adobe Firefly" → "Figma Weave" voor de beelden, tabel "Openstaande punten" met status. Enkel het definitieve logo blijft open (tijdelijk woordmerk).
+- `README.md`: Firefly-opmerking bij de AI-beelden weggehaald (de checklist vraagt Figma Weave), checklist toegevoegd aan de briefingmap.
+- Verslag p. 15: het bijschrift noemt prompt 107 nu het storyboard van de video (de checklist vraagt eerst een storyboard). Opnieuw opgeslagen in `6. Outputs/5. Verslag/` en `7. Oplevering/1. Verslag/`.
+- `README.md`, `LOGBOEK.md` en `Design guidelines.md` opnieuw naar `7. Oplevering/` gekopieerd.
+- **Nog te doen door de gebruiker:** `LOGBOEK.md` opnieuw uploaden naar GitHub (om 16:10 nog altijd de oude versie, 5 commits) en de Figma Buzz-link testen in een privévenster.
+
+### Prompt 153 · 16:14
+
+> Mijn Figma buzz link heb ik gecheckt en werkt!
+
+**Resultaat**
+- Bevestigd door de gebruiker: de Figma Buzz-link werkt. Daarmee zijn alle links in het verslag getest (landingspagina, GitHub, MailerLite-preview en Figma Buzz).
+- Nog te doen: `LOGBOEK.md` opnieuw uploaden naar de GitHub-repository.
+
+### Prompt 154 · 16:14
+
+> mijn github kan ik pas doen als alles afgerond is
+
+**Resultaat**
+- Afgesproken: `LOGBOEK.md` wordt als allerlaatste stap naar GitHub geüpload, zodat de versie daar volledig is.
+- Alle andere onderdelen zijn afgerond en gecontroleerd (zie prompt 152 en `1. Briefing/8. Opdracht checklist.md`).
+
+### Prompt 155 · 16:18
+
+> de figma link werkt niet, als ik daarop klik kom ik hierop
+
+(Met een screenshot van een Figma-pagina "404".)
+
+**Resultaat**
+- Oorzaak: Figma toont een 404 aan wie geen toegang heeft (niet ingelogd of het bestand is niet gedeeld). De link zelf is juist: in een ingelogde browser opent hij het bestand "EINDWERK – Figma Buzz".
+- Link in het verslag (p. 10 en 22) en in `7. Oplevering/8. Links.md` ingekort naar `https://www.figma.com/buzz/uWFYDcN3kFmg9FLNxSlpxf/EINDWERK` (zonder `?node-id=…&t=…`). Verslag opnieuw opgeslagen in `6. Outputs/5. Verslag/` en `7. Oplevering/1. Verslag/`.
+- Uitgelegd hoe het bestand gedeeld wordt: in Figma Buzz › **Share** › toegang op "Anyone with the link" + "can view".
