@@ -1771,3 +1771,378 @@ Onder elke prompt staat kort wat er gebeurde en welke bestanden er gemaakt of aa
 **Opmerkingen**
 - In de PDF's is de voornaam leeg ("Welkom bij Cloudberry, !", "Hallo , je…"). Dat is normaal in een voorbeeld: bij een echte inschrijver vult MailerLite de naam in. Tip: in MailerLite een standaardwaarde instellen (bv. `{$name|default('daar')}`), zodat er nooit een losse komma staat.
 - `README.md` bijgewerkt: map `3. E-mailflow` (10 bestanden), map `4. Video` en status AI-video.
+
+
+## Sessie 10 · 2026-11-10 · Landingspagina op GitHub Pages
+
+### Prompt 121 · 11:57
+
+> help me mijn de website op github te zetten
+
+**Resultaat**
+- Plan uitgelegd: repository aanmaken, de bestanden van `6. Outputs/2. Landingspagina/` uploaden, GitHub Pages aanzetten, live link in `README.md` en de prompts in `LOGBOEK.md`.
+
+### Prompt 122 · 11:58
+
+> dit is mijn beginscherm, zeg stap per stap wat ik moet doen
+
+(Met een screenshot van het GitHub-dashboard, account `manoecallens`.)
+
+**Resultaat**
+- Stappenplan via de GitHub-website, zonder terminal:
+  1. **+** › **New repository**: naam `cloudberry`, **Public**, geen vinkjes voor README, .gitignore of license.
+  2. **uploading an existing file**: de *inhoud* van de map slepen (niet de map zelf), zodat `index.html` in de hoofdmap van de repo staat › **Commit changes**.
+  3. **Settings** › **Pages** › **Deploy from a branch** › `main` + `/ (root)` › **Save**.
+  4. De live site controleren.
+- Aandachtspunten: max. 100 bestanden en 25 MB per bestand via de browser; GitHub maakt onderscheid tussen hoofdletters en kleine letters in bestandsnamen.
+
+### Prompt 123 · 11:58
+
+> welk description geef ik mij stap 1
+
+**Resultaat**
+- Beschrijving voor de repository:
+  > Awareness-campagne voor het fictieve theemerk Cloudberry: cafeïnevrije, kindvriendelijke thee voor jonge gezinnen. Periodeopdracht Creative Automation, Artevelde Hogeschool.
+
+### Prompt 124 · 12:01
+
+> waar klik ik op
+
+(Met een screenshot van de repository na de eerste upload: `fonts/`, `images/`, `LEESMIJ.md`, `index.html`, `script.js`, `style.css`.)
+
+**Resultaat**
+- Upload geslaagd, `index.html` staat in de hoofdmap.
+- Volgende stap: **Settings** › **Pages** › **Deploy from a branch** › `main` + `/ (root)` › **Save**.
+- Opgemerkt: GitHub toont `LEESMIJ.md` niet als README (alleen `README.md` wordt herkend), en `LOGBOEK.md` ontbrak nog. Daarna is `README.md` toegevoegd.
+
+### Prompt 125 · 12:03
+
+(Alleen een screenshot van **Settings › Pages** met het menu *Select branch* open.)
+
+**Resultaat**
+- Branch `main` kiezen, `/ (root)` laten staan, **Save**. Na 1 à 2 minuten verschijnt "Your site is live at".
+
+### Prompt 126 · 12:06
+
+> wat moet ik nu doen
+
+(Met een screenshot van de repository met `README.md` en een oranje bolletje naast de laatste commit.)
+
+**Resultaat**
+- Oranje bolletje = GitHub Pages is de site aan het bouwen; wachten op het groene vinkje.
+- Volgende stappen: live site controleren, link toevoegen bij **About**, `LOGBOEK.md` uploaden. `LEESMIJ.md` is optioneel te verwijderen als het dubbel is met `README.md`.
+
+### Prompt 127 · 12:10
+
+> waar naast about?
+
+**Resultaat**
+- Het tandwieltje staat rechts op dezelfde lijn als het kopje **About** › **Use your GitHub Pages website** aanvinken › **Save changes**.
+
+### Prompt 128 · 12:11
+
+> is het zo goed? wat moet ik nu doen
+
+(Met een screenshot van *Edit repository details*.)
+
+**Resultaat**
+- ✅ Correct: website `https://manoecallens.github.io/cloudberry/`, vinkje **Use your GitHub Pages website** aan.
+- Tip: topics toevoegen. Gekozen: `artevelde`, `cloudberry`, `one-pager`, `schoolopdracht`, `thee`.
+- Checklist live site: beelden, fonts, hoofdkleur hsl(265, 32 %, 48 %), knoppen en links, weergave op gsm.
+
+### Prompt 129 · 12:14
+
+> 4. Upload `LOGBOEK.md`
+> Via Add file → Upload files, want je prompts moeten mee ingediend worden.
+>
+> waar moet ik dit exact uploaden?
+
+**Resultaat**
+- In de hoofdmap van de repo, naast `README.md` en `index.html` (niet in `fonts/` of `images/`): **Add file** › **Upload files** › **Commit changes**.
+
+### Prompt 130 · 12:14
+
+> ja vul mijn logboek aan met alles van vandaag
+
+**Resultaat**
+- Aanvulling als apart bestand gemaakt (`LOGBOEK-10-november.md`), omdat de projectmap op dat moment niet verbonden was.
+
+### Prompt 131 · 12:16
+
+> ik heb wel al een logboek in de folder assets
+
+**Resultaat**
+- Uitgelegd hoe de aanvulling onderaan `assets/LOGBOEK.md` geplakt kan worden (in Visual Studio Code) en daarna opnieuw geüpload.
+
+### Prompt 132 · 12:16
+
+> heb je alles aangevuld in deze logboek?
+
+**Resultaat**
+- Verduidelijkt: het bestaande `LOGBOEK.md` was nog niet aangepast, omdat de map niet verbonden was. De aparte aanvulling is bijgewerkt met de laatste prompts.
+
+### Prompt 133 · 12:16
+
+> dit is een schermafbeelding van mijn github, geef het de juiste naam en zet het in de juiste folder
+
+(Met een screenshot van de repository `manoecallens/cloudberry`: 4 commits, `LOGBOEK.md` en `README.md` toegevoegd, live link en topics bij About.)
+
+**Resultaat**
+- Naam en map voorgesteld; nog niet zelf verplaatst, omdat de map niet verbonden was.
+
+### Prompt 134 · 12:19
+
+> de map assets is nu terug verbonden, doe verander de naam zelf en zet hetin de juiste folder
+
+**Resultaat**
+- Screenshot opgeslagen als `6. Outputs/2. Landingspagina/1. GitHub repository.png` (2880 × 1306 px), bij de bestanden van de landingspagina, zoals de MailerLite-screenshots in `3. E-mailflow/`.
+- Deze sessie (prompts 121–134) toegevoegd aan `LOGBOEK.md`.
+- `README.md` bijgewerkt: landingspagina staat live (✅) met link en screenshot.
+
+**Stand van zaken**
+- Repository: `https://github.com/manoecallens/cloudberry` (public)
+- Live site: `https://manoecallens.github.io/cloudberry/`
+- In de repo: `fonts/`, `images/`, `index.html`, `script.js`, `style.css`, `README.md`, `LEESMIJ.md`, `LOGBOEK.md`.
+- ⚠️ De versie van `LOGBOEK.md` op GitHub is van vóór deze sessie. Opnieuw uploaden (**Add file** › **Upload files**, zelfde naam = overschrijven) om sessie 10 mee te hebben.
+
+
+## Sessie 11 · 2026-11-10 · Verslag (A4-PDF)
+
+### Prompt 135 · 12:26
+
+> Maak en schrijf een professioneel, mooi en gestructureerd verslag (in de vorm van een A4-document of PDF-klare tekst met afbeeldingen en links) dat een volledige marketing- en creatieve automatiseringscampagne samenvat.
+>
+> Zorg voor een professionele lay-out, heldere secties met kopjes, duidelijke tabellen voor technische specificaties en een overzichtelijke structuur die perfect als rapport kan dienen.
+>
+> Gebruik het verslag in bijlage als voorbeeld verslag, stel mij vragen waar nodig! Vraag mij wat je nog nodig hebt van schermafbeeldingen en linken.
+>
+> Gebruik het volgende concept als basis (pas dit aan waar nodig voor jouw specifieke project):
+>
+> 1. Concept, doelgroep en sfeer
+>
+> * Concept & Doel: Geef een duidelijke beschrijving van het product/merk, het grote idee, de slogan en het hoofddoel van de campagne (bijv. brand awareness en inschrijvingen op de nieuwsbrief via e-mailflows).
+> * Doelgroep & Sfeer: Omschrijf de primaire doelgroep, de beleving/sfeer (zintuiglijk, warm, geborgen) en de geurnoten of productkenmerken.
+> * Visuele identiteit: Benoem het kleurenpalet (inclusief hex-codes en WCAG AA contrastregels), de typografie (koppen en broodtekst) en de toon (bijv. de je-vorm, korte koppen met punt, geen uitroeptekens).
+>
+>
+> 2. Geautomatiseerde assets (Photoshop & Batch)
+>
+> * Photoshop Actions & Batch: Beschrijf hoe binnenkomende beelden via opgenomen actions (zoals Select Subject met AI-vrijstelling, kleurcorrectie en export) en automatische batches in één beweging werden omgezet naar de juiste social-mediaformaten (zoals 4:5 en 9:16).
+>
+>
+> 3. Social media varianten (Figma Buzz)
+>
+> * Campagneplan & XLSX: Leg uit hoe een CSV-campagneplan via een script is omgezet naar XLSX-bestanden om massaal varianten te genereren.
+> * Figma Buzz Bulk Create: Toon het overzicht van het aantal gegenereerde posts, stories en advertenties (inclusief afmetingen en formaten) gekoppeld aan de templates.
+>
+>
+> 4. AI-gegenereerde content (Weave, Flux, Claude)
+>
+> * Beelden: Beschrijf de ingezette Weave-flow (of vergelijkbare tools) waarin productfoto's via prompts (bijv. Gemini Nano Banana Pro voor labels en Flux 2 Pro voor scènes) naadloos werden geïntegreerd in dynamische sfeerbeelden.
+> * Copywriting: Geef aan hoe de copy per kanaal (website, social varianten en e-mails) werd geschreven volgens het CORE-model (Context, Opdracht, Regels, Eindresultaat) met oog voor de tone of voice.
+>
+>
+> 5. E-mailflow en formulier (MailerLite)
+>
+> * Automation & Scenarios: Leg het formulier op de landingspagina uit en de e-mailflow die volgt (Welkomstmail direct met keuzeknoppen voor scenario's zoals 'voor jezelf' of 'als cadeau', gevolgd door verdiepende mails en rituelen).
+> * Stijl & Vormgeving: Benoem de opbouw van de mails (600px breed, typografie, kleuren, uitschrijflink).
+>
+>
+> 6. Landingspagina
+>
+> * Bouw & Vibe-coded: Beschrijf de opbouw van de statische landingspagina (HTML, CSS, JS zonder framework), de secties (Hero, verhaal met top/hart/basis, cadeau-sectie en inschrijfformulier) en hoe deze visueel aansluit bij de brand kit.
+>
+>
+> 7. Links, GDPR en AI-transparantie
+>
+> * Overzicht van alle links: Maak een nette tabel of opsomming met werkende links naar het Figma-bestand (inclusief nodes voor brand kit en social plan), de Figma Buzz-varianten, de Weave-flow, de live landingspagina (bijv. op Netlify of GitHub Pages) en de MailerLite-form preview.
+> * GDPR-verantwoording: Licht toe hoe dataminimalisatie, het niet vooraf aanvinken van de opt-in, de verplichte uitschrijflink en het gebruik van uitsluitend fictieve testcontacten zijn toegepast.
+> * AI-transparantieverslag: Geef in een duidelijke tabel of opsomming weer welke AI-tools zijn ingezet (zoals Claude, Figma Weave, Photoshop AI) en voor welke specifieke onderdelen ze zijn gebruikt.
+
+(Met het voorbeeldverslag `Verslag-voorbeeld.pdf` van een ander merk als bijlage.)
+
+**Resultaat**
+- Voorbeeldverslag bekeken (opbouw: cover, inhoud, 7 hoofdstukken, linkoverzicht, GDPR, AI-transparantie).
+- 13 vragen gesteld over vorm, merk, automatisatie, AI-tools, landingspagina en nieuwsbrief, plus een lijst van gewenste screenshots en links.
+- Gevraagd om de projectmap te verbinden, omdat de bijlagen (xlsx, fonts, video's) leeg doorkwamen.
+
+### Prompt 136 · 12:31
+
+> de map is opnieuw gelinkt, wat heb je als eerste nodig of alles direct van schermafbeeldingen en links?
+
+**Resultaat**
+- De map was nog niet zichtbaar in de sessie. Gevraagd om de map toe te voegen via **+ › Add folder**.
+
+### Prompt 137 · 12:32
+
+> dit is de map, lukt het nu?
+
+(Map `EINDOPDRACHT` verbonden.)
+
+**Resultaat**
+- Volledige projectmap gelezen (briefing, design guidelines, README, logboek, leesmij's van de scripts en de action, Weave-prompt, landingspagina, e-mails, spreadsheet, screenshots).
+- Verslag opgebouwd uit de bestanden in de map. Waar de werkwijze afwijkt van het basisconcept uit prompt 135, volgt het verslag wat er echt gebeurd is (bv. Weave met Gemini in plaats van Flux, scenario's "geklikt / niet geklikt" in plaats van "voor jezelf / als cadeau").
+
+### Prompt 138 · 12:33
+
+> zorg dat alles in het logboek up to date is
+
+**Resultaat**
+- Sessie 11 (prompts 135–139) toegevoegd aan `LOGBOEK.md`, telkens met het resultaat.
+
+### Prompt 139 · 12:39
+
+> figma buzz: https://www.figma.com/buzz/uWFYDcN3kFmg9FLNxSlpxf/EINDWERK?node-id=0-1&t=aLBl4iVPA2LjUK4V-1
+>
+> figma weave: enkel als ik de betalende versie heb kan ik de link geven maar ik betaal er niet voor, kan ik iets anders geven? schermafbeeldingen?
+>
+> mailerlite: https://preview.mailerlite.io/forms/2730832/203668503757063949/share
+>
+> ik pas het nog aan in mijn figma buzz, het wordt citroengas heb ik aangepast naar citroengras
+
+**Resultaat**
+- Links van Figma Buzz en de MailerLite-formulierpreview in het verslag gezet (p. 7, 10 en 13).
+- Figma Weave: geen deellink (enkel in een betaald plan). In de plaats verwijst het verslag naar de screenshot `4. AI-beelden/4. Weave workflow.png` (p. 8) en de prompts in `4. AI-beelden/3. Weave prompt.md`.
+- "Citroengas" wordt door de gebruiker zelf aangepast naar "Citroengras" in Figma Buzz. In `6. Outputs/1. Socials/2. Sociale media.xlsx` staat nog "Citroengas" (rij "Cloudberry fris").
+- **Verslag gemaakt:** `6. Outputs/5. Verslag/1. Verslag Cloudberry.pdf` (A4, 13 pagina's, Space Grotesk en de Cloudberry-kleuren, opbouw zoals het voorbeeldverslag):
+  1. Cover · 2. Inhoud + opdracht tegenover oplevering · 3. Concept, doelgroep en sfeer · 4. Visuele identiteit (palet, WCAG, typografie, label) · 5. Photoshop-action + batch · 6. Python-scripts (label en mockups) · 7. Figma Buzz (60 assets) · 8. Weave-beelden · 9. Copy (CORE) en video · 10. MailerLite-flow · 11. De 3 mails · 12. Landingspagina · 13. Links, GDPR en AI-transparantie.
+  - Screenshots van de landingspagina gemaakt vanuit de lokale bestanden (desktop 1440 px, mobiel 390 px).
+- Afwijkingen van het basisconcept uit prompt 135, zodat het verslag klopt met wat er echt gemaakt is: action met Magic Wand (geen Select Subject), formaten in de Buzz-templates (niet in Photoshop), spreadsheet zonder CSV-script, Weave met Gemini Image (Nano Banana 2 Lite) in plaats van Flux, scenario's "geklikt / niet geklikt" in plaats van "voor jezelf / als cadeau".
+
+**Nog na te kijken door de gebruiker**
+- In het verslag staat: ad = 1080 × 1080 (1:1), post = 1080 × 1350 (4:5), story = 1080 × 1920 (9:16). Klopt die verdeling met de templates in Figma Buzz?
+- De automation "Cloudberry Welkomstflow" stond bij de laatste screenshot op **Inactive**. Zet ze op **Activate** vóór het indienen.
+- Testabonnees: in het verslag staan "twee eigen testadressen van de ontwerper, geen gegevens van derden".
+
+### Prompt 140 · 12:43
+
+> dit is een nieuwe up to date schermafbeelding van mijn figma weave
+
+(Met een screenshot van Figma Weave "EINDWERK - Cloudberry": referentiebeelden bovenaan, prompt-nodes links en rechts, 5 rijen van 5 generaties.)
+
+**Resultaat**
+- Opgeslagen als `4. AI-beelden/4. Weave workflow v2.png` (2880 × 1312 px). De oude versie `4. Weave workflow.png` (28 okt) blijft staan.
+- In het verslag vervangen (p. 8), met een aangepast bijschrift: per reeks een rij van 5 beelden (bewerkt, hand, enkel, vuil, gezin). Het verslag verwijst naar deze screenshot in de plaats van een deellink, omdat Weave enkel in een betaald plan deelt.
+- `6. Outputs/5. Verslag/1. Verslag Cloudberry.pdf` opnieuw opgeslagen.
+
+### Prompt 141 · 12:45
+
+> mijn mailerlite automation heb ik net active gezet
+>
+> post: 1080x1080
+> story: 1080x1920
+> ad: 1440x1800
+>
+> ik pas de excel aan!
+
+**Resultaat**
+- Verslag aangepast en opnieuw opgeslagen (`6. Outputs/5. Verslag/1. Verslag Cloudberry.pdf`):
+  - p. 7: formaten Figma Buzz = post 1080 × 1080 (1:1), ad 1440 × 1800 (4:5), story 1080 × 1920 (9:16). Bijschriften van de 3 Buzz-screenshots aangepast.
+  - p. 11: het aandachtspunt "Inactive" vervangen door de status **Active** (sinds 10 nov).
+- `README.md`: status MailerLite-flow op ✅ en formaten van de social assets bijgewerkt.
+- De gebruiker past "Citroengas" zelf aan naar "Citroengras" in `6. Outputs/1. Socials/2. Sociale media.xlsx`.
+
+### Prompt 142 · 12:48
+
+> zet veel meer schermafbeeldingen in de pdf zodat alles duidelijk is zoals de photoshop batch en action moeten er zeker allebei in staan
+
+**Resultaat**
+- Gevraagd om nieuwe screenshots die nog niet in de map staan: het Actions-paneel in Photoshop (moet erin), de Bulk create-tabel en een template in Figma Buzz, het genereerscherm in Adobe Firefly, en optioneel de live site en een mail in de MailerLite-editor.
+- Verslag uitgebreid van 13 naar 20 pagina's, met de screenshots en beelden die al in de map stonden:
+  - **p. 5 Fotografie:** pagina 1 van `8. Analyse.pdf`, contactsheets licht en donker, voor en na het label-script (Donker 34).
+  - **p. 6 Photoshop-action:** de 12 stappen zoals opgenomen in `1. Cloudberry.atn` (uitgelezen uit het bestand: Layer Via Copy, Hide, 2× Magic Wand op x 463 / y 192 en x 587 / y 340 met Tolerance 32, Expand 1 px, Delete, Save) + 2 voor/na-paren.
+  - **p. 7 Photoshop-batch:** het volledige batchvenster groot in beeld, de instellingen als tabel en een derde voor/na-paar.
+  - **p. 9 Mockups:** alle 8 mockups (4 posts en 4 stories).
+  - **p. 12 Beeldbank:** de 5 beeldreeksen met waar ze gebruikt zijn + 11 AI-beelden.
+  - **p. 13 Copy:** uittreksel uit `LOGBOEK.md` (prompt 65) als beeld.
+  - **p. 14 Video:** eigen pagina, met de 4 clips en prompt 107 uit het logboek.
+  - **p. 16 MailerLite:** Automations-overzicht, Forms-overzicht en het succesbericht.
+  - **p. 19 Landingspagina:** verhaal, gezinsmomenten, de GitHub-repository en prompt 80 uit het logboek.
+- Opmerking: in `1. Cloudberry.atn` begint de action met **Layer Via Copy + Hide** (niet "Layer from Background" zoals in `3. Leesmij.md`) en zit er een tweede Magic Wand-klik in. Het verslag volgt de opgenomen action.
+- `6. Outputs/5. Verslag/1. Verslag Cloudberry.pdf` opnieuw opgeslagen.
+
+### Prompt 143 · 12:59
+
+> dit zijn al schermafbeeldingen van de action en van de figma buzz bulk
+
+(Met 2 screenshots van het Actions-paneel in Photoshop en 1 screenshot van Bulk edit in Figma Buzz.)
+
+**Resultaat**
+- Opgeslagen en hernoemd:
+
+| Nieuwe naam | Inhoud |
+|---|---|
+| `5. Automatisatie/3. Photoshop action/4. Action deel1.png` | Actions-paneel, bovenste deel: Layer Via Copy › Hide Background › Set Selection (463, 192 px) › Expand › Delete › … |
+| `5. Automatisatie/3. Photoshop action/5. Action deel2.png` | Actions-paneel, onderste deel: tweede Set Selection (587, 340 px) › Expand › Delete › Set Selection none › Save (PNG) |
+| `6. Outputs/1. Socials/6. Buzz bulk.png` | Bulk edit in Figma Buzz: 63 assets, kolommen Asset size, Titel, CTA |
+
+- Verslag: de 2 action-screenshots naast de stappentabel (p. 6). Nieuwe pagina "Bulk edit: van spreadsheet naar 60 assets" (p. 11). Het verslag telt nu 21 pagina's.
+- Opgemerkt: de Save-stap toont "In: File or folder not found", omdat de doelmap later hernoemd werd. Geen probleem in de batch (Override Action "Save As" Commands staat aan). Wil je de action los gebruiken, neem dan de Save-stap opnieuw op.
+
+### Prompt 144 · 13:00
+
+> dit is een schermafbeelding van een template
+
+(Met een screenshot van Figma Buzz: rij 1 met de templates Post, Story en Ad, en het Layers-paneel.)
+
+**Resultaat**
+- Opgeslagen als `6. Outputs/1. Socials/7. Buzz template.png`.
+- In het verslag op p. 11 onder "Eén rij, drie templates": Post 1080 × 1080, Story 1080 × 1920, Ad 1440 × 1800, met de lagen Text 1 (patroon), Image, Text 2 (CTA), Vector 1 en Background.
+- `README.md` bijgewerkt (nieuwe bestanden in `3. Photoshop action/` en `1. Socials/`).
+- `6. Outputs/5. Verslag/1. Verslag Cloudberry.pdf` opnieuw opgeslagen.
+
+### Prompt 145 · 13:03
+
+> dit zijn alle schermafdelingen van de adobe firefly video's, is het zo goed?
+
+(Met 5 screenshots uit Adobe Firefly, project "EINDWERK - Cloudberry - Video".)
+
+**Resultaat**
+- Bevestigd: de screenshots tonen per clip het model (Firefly Video), de resolutie, 9:16, de kaders (eerste en laatste frame) en de prompt.
+- Opgeslagen in `6. Outputs/4. Video/`:
+
+| Nieuwe naam | Inhoud |
+|---|---|
+| `6. Firefly A.png` | Clip A · 1080p · camera schuift opzij, kopje komt in beeld |
+| `7. Firefly B.png` | Clip B · 540p · hand komt van links in beeld |
+| `8. Firefly C v1.png` | Clip C, generatie 1 · 540p · kopje gaat linksboven uit beeld |
+| `9. Firefly C v2.png` | Clip C, generatie 2 · aangepaste prompt ("out of the frame") |
+| `10. Firefly C v3.png` | Clip C, generatie 3 |
+
+- Verslag: nieuwe pagina "Adobe Firefly: prompts en instellingen" (p. 16) en een tabel per clip op de videopagina (p. 15). Het verslag telt nu 22 pagina's.
+- Opgemerkt: in de invoerbalk onderaan staat nog "Veo 3.1 Fast", maar de clips zelf zijn met Firefly Video gemaakt. Dat staat zo in het verslag. B en C zijn in 540p gegenereerd (A in 1080p).
+- `README.md` bijgewerkt (map `4. Video`).
+
+### Prompt 146 · 13:17
+
+> ik heb de mails met claude geschreven, zijn er nog zaken die je nodig hebt?
+
+**Resultaat**
+- Verslag aangepast en opnieuw opgeslagen:
+  - p. 14: extra blok "E-mails" in de CORE-opbouw (welkom, verdieping, reminder).
+  - p. 19: de mailteksten zijn met Claude geschreven.
+  - p. 22: in de tabel AI-transparantie staat bij Claude nu ook "de 3 e-mails".
+- Niets meer nodig voor het verslag. Nog te doen door de gebruiker vóór 23:59: `LOGBOEK.md` en `README.md` opnieuw uploaden naar de GitHub-repository (de versie daar is van vóór sessie 10), `7. Oplevering/` vullen, en alle links in een privévenster testen.
+
+### Prompt 147 · 13:19
+
+> ja vul de folder 7. Oplevering in met alles dat gevraagd werd, moet je nog iets weten of is alles duidelijk?
+
+**Resultaat**
+- `7. Oplevering/` gevuld met kopieën (de originelen blijven op hun plaats), per onderdeel van de opdracht:
+
+| In `7. Oplevering/` | Opdracht | Inhoud |
+|---|---|---|
+| `README.md`, `LOGBOEK.md`, `Design guidelines.md` | 1 · Projectfolder | Overzicht, alle prompts, huisstijlregels |
+| `1. Verslag/` | 7 | `1. Verslag Cloudberry.pdf` (22 p.) |
+| `2. Photoshop/` | 2 | Action (.atn), batch- en action-screenshots, leesmij |
+| `3. Socials/` | 3 | `1. Sociale media.xlsx` + `2.–6.` screenshots Figma Buzz (posts, ads, stories, bulk, template) |
+| `4. AI-beelden/` | 4 | `1. Socials/` (25), `2. Zonder achtergrond/` (25), Weave-prompt, Weave-screenshot (v2) |
+| `5. Video/` | 4 | Clips A–D, eindversie, 5 Firefly-screenshots |
+| `6. E-mailflow/` | 5 | 7 MailerLite-screenshots + 3 mails (PDF) |
+| `7. Landingspagina/` | 6 | Broncode zoals op GitHub Pages + screenshot repository |
+| `8. Links.md` | 7 | Alle links + inhoud van de map |
+
+- In `3. Socials/` hernoemd naar wat de screenshots tonen: `Buzz vierkant` → `Buzz posts`, `Buzz staand` → `Buzz ads`, `Buzz story` → `Buzz stories`.
+- Niet opgenomen: de 60 social assets als losse PNG's. Die staan alleen in Figma Buzz (link in `8. Links.md`). Optioneel: in Buzz exporteren (**Export**) en in `7. Oplevering/3. Socials/` zetten.
+- `README.md` bijgewerkt: oplevering ✅. Daarna `README.md` en `LOGBOEK.md` naar `7. Oplevering/` gekopieerd.
