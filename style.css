@@ -1,0 +1,505 @@
+/* =========================================================
+   Cloudberry · landingspagina
+   Huisstijl: zie assets/Design guidelines.md
+   Mobile first · tablet ≥ 640px · desktop ≥ 1024px
+   ========================================================= */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/space-grotesk.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root {
+  /* Huisstijl */
+  --paars: #7453A2;          /* hsl(265, 32%, 48%) – hoofdkleur */
+  --paars-hover: #634390;
+  --diep: #3F2C59;           /* tekst */
+  --lavendel: #D8CAEC;
+  --wolk: #F7F4FA;           /* pagina-achtergrond */
+  --wit: #ffffff;
+
+  /* Zachte smaaktinten (achtergrond) en tekstkleuren (ink), zoals in de Figma Buzz-assets */
+  --groen-bg: #A7AD96;  --groen-ink: #35381E;
+  --geel-bg: #CAA84E;   --geel-ink: #4A280A;
+  --oranje-bg: #DEA363; --oranje-ink: #542C17;
+  --rood-bg: #CEBBB3;   --rood-ink: #903645;
+  --vier-bg: #B1A190;   --vier-ink: #3C220F;  /* alle smaken */
+
+  --radius: 24px;
+  --radius-sm: 16px;
+  --shadow: 0 18px 40px -18px rgba(63, 44, 89, .35);
+  --wrap: 1180px;
+  --gutter: 20px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--diep);
+  background: var(--wolk);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  margin: 0 0 .5em;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.6rem, 9vw, 5.2rem); }
+h2 { font-size: clamp(2rem, 6vw, 3.4rem); }
+h3 { font-size: 1.3rem; letter-spacing: -.01em; margin-bottom: .35em; }
+p { margin: 0 0 1em; }
+em { font-style: normal; color: var(--paars); }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--paars); color: var(--wit);
+  padding: 10px 16px; border-radius: 12px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+:focus-visible { outline: 3px solid var(--paars); outline-offset: 3px; border-radius: 6px; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--paars);
+  margin-bottom: 1rem;
+}
+.eyebrow--light { color: var(--lavendel); }
+
+.lead { font-size: clamp(1.08rem, 2.2vw, 1.25rem); max-width: 36em; }
+
+/* ---------- Knoppen ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .5em;
+  font: inherit; font-weight: 700;
+  padding: .9em 1.5em;
+  border-radius: 999px;
+  border: 2px solid var(--paars);
+  background: var(--paars); color: var(--wit);
+  text-decoration: none; cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.btn:hover { background: var(--paars-hover); border-color: var(--paars-hover); transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn span { transition: transform .2s ease; }
+.btn:hover span { transform: translateX(3px); }
+.btn--ghost { background: transparent; color: var(--paars); }
+.btn--ghost:hover { background: var(--lavendel); border-color: var(--paars); }
+.btn--light { background: var(--wit); color: var(--paars); border-color: var(--wit); }
+.btn--light:hover { background: var(--lavendel); border-color: var(--lavendel); color: var(--diep); }
+.btn--small { padding: .6em 1.1em; font-size: .95rem; }
+
+/* ---------- Logo (tijdelijk woordmerk) ---------- */
+.logo {
+  font-weight: 700; font-size: 1.6rem; letter-spacing: -.04em;
+  color: var(--paars); text-decoration: none; line-height: 1;
+}
+.logo--light { color: var(--wit); }
+
+/* ---------- Navigatie ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247, 244, 250, .86);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid rgba(116, 83, 162, .12);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.nav__links { display: none; list-style: none; margin: 0; padding: 0; gap: 28px; }
+.nav__links a { text-decoration: none; font-weight: 500; position: relative; }
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+  background: var(--paars); transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.nav__links a:hover::after { transform: scaleX(1); }
+
+/* ---------- Buzz-kaart: herhaalde "Cloudberry + woord" achter het product ---------- */
+.buzz {
+  --bg: var(--vier-bg); --ink: var(--vier-ink);
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg);
+  container-type: inline-size;
+  isolation: isolate;
+}
+.buzz--groen  { --bg: var(--groen-bg);  --ink: var(--groen-ink); }
+.buzz--geel   { --bg: var(--geel-bg);   --ink: var(--geel-ink); }
+.buzz--oranje { --bg: var(--oranje-bg); --ink: var(--oranje-ink); }
+.buzz--rood   { --bg: var(--rood-bg);   --ink: var(--rood-ink); }
+.buzz--vier   { --bg: var(--vier-bg);   --ink: var(--vier-ink); }
+
+.buzz__rows {
+  /* Zoals in Figma Buzz: de rijen vullen de volledige breedte, gecentreerd.
+     script.js past de lettergrootte per kaart aan, zodat elke rij van rand tot rand loopt. */
+  position: absolute; inset: 2.5% 2% 0;
+  z-index: -1;
+  display: flex; flex-direction: column; align-items: center;
+  font-size: 9.6cqw;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--ink);
+  user-select: none;
+}
+.buzz__rows span { display: block; font-weight: 300; }
+.buzz__rows b { font-weight: 700; }
+
+.buzz__img {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  width: 100%;
+}
+/* Hover: de kaartjes draaien niet (meer). Bij de smaken wordt het doosje groter. */
+@media (hover: hover) {
+  /* Smaakkaarten: het theedoosje wordt 1,2x groter. Vanuit het midden onderaan,
+     zodat de tafel de onderrand blijft vullen (geen lijntje). */
+  .smaak .buzz:hover .buzz__img { transform: scale(1.2); }
+}
+.smaak .buzz__img { transform-origin: 50% 100%; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding: 40px 0 64px; overflow: hidden; }
+.hero__grid { display: grid; gap: 40px; align-items: center; position: relative; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 24px; }
+.hero__card {
+  box-shadow: var(--shadow); max-width: 560px; width: 100%; justify-self: center;
+  /* Zelfde wolkvorm en verhouding als de foto bij "Ons verhaal" */
+  border-radius: 46% 54% 42% 58% / 34% 32% 68% 66%;
+  aspect-ratio: 4 / 4.4;
+}
+
+.badges { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.badges li {
+  font-size: .85rem; font-weight: 500;
+  padding: .4em .9em; border-radius: 999px;
+  background: var(--wit); border: 1px solid rgba(116, 83, 162, .2);
+}
+.badges li::before { content: "●"; color: var(--paars); margin-right: .45em; font-size: .7em; vertical-align: .15em; }
+
+.blob { position: absolute; border-radius: 50%; filter: blur(2px); z-index: 0; pointer-events: none; }
+.blob--1 { width: 520px; height: 520px; right: -180px; top: -140px; background: radial-gradient(circle at 40% 40%, #E7DDF4, transparent 70%); }
+.blob--2 { width: 360px; height: 360px; left: -160px; bottom: -120px; background: radial-gradient(circle, rgba(235,193,92,.28), transparent 70%); }
+
+/* ---------- Ticker ---------- */
+.ticker {
+  background: var(--diep); color: var(--wit);
+  overflow: hidden; padding: 14px 0;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  letter-spacing: -.02em;
+}
+.ticker__track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
+.ticker span { font-weight: 400; padding-right: 2.2em; white-space: nowrap; }
+.ticker b { font-weight: 700; color: inherit; }
+/* Fellere versies van de smaakkleuren, speciaal voor de donkere balk
+   (zelfde tint als de kaarten, maar helderder; contrast 5,7–9,2 : 1 op diep paars) */
+.ticker .t-groen  { color: #A8DB6A; }
+.ticker .t-geel   { color: #FFD24D; }
+.ticker .t-oranje { color: #FFA45C; }
+.ticker .t-rood   { color: #FF8FA3; }
+.ticker .t-vier   { color: #F0DCC2; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }
+
+/* ---------- Secties ---------- */
+.section { padding: 72px 0; }
+.section__head { margin-bottom: 36px; max-width: 760px; }
+
+/* Verhaal */
+.verhaal__grid { display: grid; gap: 40px; align-items: center; }
+.verhaal__img { margin: 0; position: relative; max-width: 520px; }
+.verhaal__img img {
+  border-radius: 46% 54% 42% 58% / 34% 32% 68% 66%; /* zachte wolkvorm */
+  aspect-ratio: 4 / 4.4; object-fit: cover; width: 100%;
+  box-shadow: var(--shadow);
+}
+.sticker {
+  position: absolute; right: 2%; top: 6%;
+  width: 104px; height: 104px; border-radius: 50%;
+  display: grid; place-items: center; text-align: center;
+  background: var(--lavendel); color: var(--diep); /* licht paars */
+  font-weight: 700; line-height: 1.05; font-size: 1.05rem;
+  transform: rotate(10deg);
+  box-shadow: 0 10px 24px -10px rgba(63,44,89,.45);
+}
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0 0; }
+.stats div { background: var(--wit); border-radius: var(--radius-sm); padding: 16px 14px; border: 1px solid rgba(116,83,162,.14); }
+.stats dt { font-size: 2.2rem; font-weight: 700; color: var(--paars); line-height: 1; letter-spacing: -.03em; }
+.stats dd { margin: 6px 0 0; font-size: .9rem; line-height: 1.3; }
+
+/* Smaken */
+.smaken { background: var(--wit); border-radius: 40px 40px 0 0; }
+.smaken__grid { display: grid; gap: 32px; grid-template-columns: 1fr; }
+.smaak .buzz { margin-bottom: 16px; }
+.smaak p { font-size: 1rem; margin: 0; }
+.tag {
+  display: inline-block; font-size: .78rem; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase;
+  padding: .35em .8em; border-radius: 999px; margin-bottom: 10px;
+  background: var(--lavendel); color: var(--diep);
+}
+.tag--info { background: var(--wolk); border: 1px solid rgba(63,44,89,.25); }
+
+/* Momenten (bento) */
+.momenten { background: var(--wit); padding-top: 24px; }
+.bento { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+.bento__item {
+  margin: 0; position: relative; overflow: hidden;
+  border-radius: var(--radius-sm); aspect-ratio: 4 / 5;
+}
+.bento__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.bento__item:hover img { transform: scale(1.04); }
+.bento__item--wide { grid-column: span 2; aspect-ratio: 3 / 2; }
+.bento__item figcaption {
+  position: absolute; left: 10px; right: 10px; bottom: 10px;
+  background: rgba(255,255,255,.92); color: var(--diep);
+  font-weight: 500; font-size: .9rem; line-height: 1.3;
+  padding: .6em .8em; border-radius: 12px;
+  /* Alle kaartjes even hoog: ruimte voor 2 regels, tekst verticaal gecentreerd */
+  min-height: calc(2 * 1.3em + 1.2em);
+  display: flex; align-items: center;
+}
+
+/* CTA */
+.cta {
+  background: var(--paars); color: var(--wit);
+  padding: 80px 0; position: relative; overflow: hidden;
+}
+.cta::before {
+  content: ""; position: absolute; width: 640px; height: 640px; border-radius: 50%;
+  right: -220px; top: -260px; background: radial-gradient(circle, rgba(216,202,236,.3), transparent 70%);
+}
+.cta__grid { display: grid; gap: 48px; align-items: center; position: relative; }
+.cta .lead { color: #EFE8F8; }
+.cta__card { max-width: 440px; width: 100%; justify-self: center; box-shadow: 0 30px 60px -25px rgba(30,15,50,.6); }
+
+.signup { margin-top: 28px; max-width: 520px; }
+.form { display: grid; gap: 14px; }
+.form__row { display: grid; gap: 6px; }
+.form label { font-weight: 500; font-size: .95rem; }
+.form input[type="text"],
+.form input[type="email"] {
+  font: inherit; font-size: 1rem; color: var(--diep);
+  padding: .85em 1em; border-radius: 14px;
+  border: 2px solid transparent; background: var(--wit);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form input::placeholder { color: #8C7EA3; }
+.form input:focus { outline: none; border-color: var(--lavendel); box-shadow: 0 0 0 4px rgba(216,202,236,.45); }
+.form__check { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem !important; font-weight: 400 !important; line-height: 1.4; color: #EFE8F8; cursor: pointer; }
+.form__check input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--lavendel); flex: none; }
+.form .btn { justify-self: start; margin-top: 4px; }
+.form__error { color: var(--wit); background: rgba(176,78,104,.85); padding: .6em .9em; border-radius: 12px; font-size: .9rem; margin: 0; }
+.form__success { background: var(--wit); color: var(--diep); border-radius: var(--radius); padding: 28px; margin-top: 32px; }
+.form__success-title { font-size: 2rem; font-weight: 700; color: var(--paars); margin: 0 0 4px; letter-spacing: -.03em; }
+.form__success p:last-child { margin: 0; }
+
+/* FAQ */
+.faq__list { display: grid; gap: 12px; }
+.faq details {
+  background: var(--wit); border-radius: var(--radius-sm);
+  border: 1px solid rgba(116,83,162,.14);
+  padding: 0 20px;
+}
+.faq summary {
+  list-style: none; cursor: pointer;
+  font-weight: 700; font-size: 1.08rem;
+  padding: 18px 36px 18px 0; position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--lavendel); color: var(--paars); font-size: 1.2rem; line-height: 1;
+  transition: transform .25s ease;
+}
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details.is-closing summary::after { transform: translateY(-50%) rotate(0deg); }
+.faq details p { margin: 0 0 18px; max-width: 60em; }
+
+/* Footer */
+.footer { background: var(--diep); color: var(--wit); padding: 48px 0 28px; }
+.footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; }
+.footer__slogan { margin: 0; font-size: 1.2rem; font-weight: 300; }
+.footer__small { margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.15); }
+.footer__small p { margin: 0; font-size: .82rem; color: #CFC4DF; }
+
+/* Mobiel: onderschrift onder de foto, zodat het product zichtbaar blijft */
+@media (max-width: 639px) {
+  .bento__item { aspect-ratio: auto; overflow: visible; }
+  .bento__item img { height: auto; aspect-ratio: 4 / 5; border-radius: var(--radius-sm); }
+  .bento__item--wide img { aspect-ratio: 3 / 2; }
+  .bento__item figcaption { position: static; background: none; padding: 8px 2px 0; font-size: .85rem; min-height: calc(2 * 1.3em + 8px); align-items: flex-start; }
+}
+
+/* Ankers onder de sticky navigatie */
+section[id] { scroll-margin-top: 72px; }
+
+/* ---------- Reveal-animatie ---------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .hero__card.reveal.is-visible { transform: none; } /* recht, zoals de foto bij het verhaal */
+.js .cta__card.reveal.is-visible { transform: none; } /* recht */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================================
+   Tablet ≥ 640px
+   ========================================================= */
+@media (min-width: 640px) {
+  :root { --gutter: 32px; }
+  .section { padding: 96px 0; }
+  .smaken__grid { grid-template-columns: repeat(2, 1fr); gap: 36px 28px; }
+  .bento { gap: 20px; }
+  .faq__wrap { max-width: 860px; }
+}
+
+@media (min-width: 820px) {
+  .nav__links { display: flex; }
+  .verhaal__grid { grid-template-columns: 1fr 1.1fr; gap: 64px; }
+  .cta__grid { grid-template-columns: 1.15fr .85fr; }
+  .hero__grid { grid-template-columns: 1.05fr 1fr; gap: 48px; }
+  .hero { padding: 64px 0 96px; }
+}
+
+/* =========================================================
+   Desktop ≥ 1024px
+   ========================================================= */
+@media (min-width: 1024px) {
+  .smaken__grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .bento { grid-template-columns: repeat(4, 1fr); }
+  .bento__item--wide { aspect-ratio: auto; }
+  .bento__item--wide img { position: absolute; inset: 0; } /* even hoog als de kaartjes ernaast */
+  .hero { padding: 80px 0 120px; }
+}
+
+/* =========================================================
+   MailerLite-formulier in de huisstijl
+   Overschrijft de standaardopmaak uit de embed-code
+   (Tahoma/Open Sans, kleine velden, donker vlak).
+   "#inschrijven" ervoor maakt de regels sterker dan de stijl in de embed,
+   die later in de pagina staat.
+   ========================================================= */
+#inschrijven #mlb2-48308922.ml-form-embedContainer { display: block; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-align-center { text-align: left; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper,
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+  background: transparent; max-width: 520px; width: 100%; display: block !important; border-radius: 0;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0; }
+
+/* De sectie heeft al een titel en intro: de kop uit MailerLite ("Even pauze?") is dubbel */
+#inschrijven #mlb2-48308922 .ml-form-embedBody .ml-form-embedContent { display: none; }
+
+/* Alles in Space Grotesk */
+#inschrijven #mlb2-48308922,
+#inschrijven #mlb2-48308922 input,
+#inschrijven #mlb2-48308922 button,
+#inschrijven #mlb2-48308922 p,
+#inschrijven #mlb2-48308922 h4,
+#inschrijven #mlb2-48308922 label,
+#inschrijven #mlb2-48308922 .label-description { font-family: "Space Grotesk", system-ui, sans-serif !important; }
+
+/* Velden */
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin-bottom: 14px; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+  color: var(--diep) !important;
+  font-size: 1rem !important; line-height: 1.4 !important;
+  padding: .85em 1em !important;
+  border: 2px solid transparent !important; border-radius: 14px !important;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder { color: #8C7EA3 !important; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
+  outline: none; border-color: var(--lavendel) !important; box-shadow: 0 0 0 4px rgba(216,202,236,.45);
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent { margin-bottom: 16px; }
+
+/* Privacytekst en opt-in */
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent.privacy-policy p,
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p {
+  color: #EFE8F8 !important; font-size: .9rem !important; line-height: 1.45 !important; font-weight: 400 !important;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow { margin-bottom: 22px; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label { padding-left: 30px; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before,
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+  width: 20px !important; height: 20px !important; left: -30px !important; top: 0 !important;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+  border-radius: 6px !important; border: 0 !important;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked ~ .label-description::before {
+  background-color: var(--lavendel) !important;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked ~ .label-description::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%233F2C59' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e") !important;
+}
+
+/* Knop "Ik doe mee": wit met paarse tekst, zoals de andere knoppen */
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { float: none; width: auto; margin: 0; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  width: auto !important;
+  background-color: var(--wit) !important; color: var(--paars) !important;
+  font-size: 1.0625rem !important; font-weight: 700 !important; line-height: 1.2 !important;
+  padding: .9em 1.6em !important; border-radius: 999px !important;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary::after { content: " →"; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+  background-color: var(--lavendel) !important; color: var(--diep) !important;
+  transform: translateY(-2px); box-shadow: var(--shadow) !important;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+  background-color: var(--lavendel) !important; padding: .9em 1.6em !important;
+}
+
+/* Foutmelding (verplicht veld niet ingevuld) */
+#inschrijven #mlb2-48308922 .ml-error input { border-color: #F3B6C4 !important; }
+#inschrijven #mlb2-48308922 .ml-error .label-description p,
+#inschrijven #mlb2-48308922 .ml-error .label-description p a { color: #FFD6DF !important; }
+
+/* Succesbericht van MailerLite, met ruimte bovenaan */
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+  background: var(--wit); border-radius: var(--radius); padding: 28px; margin-top: 8px;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent { margin: 0; }
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+  color: var(--paars); font-size: 2rem; font-weight: 700; letter-spacing: -.03em; margin: 0 0 6px;
+}
+#inschrijven #mlb2-48308922.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+  color: var(--diep); font-size: 1.05rem; line-height: 1.5;
+}
